@@ -1,0 +1,24 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require_self
+ *= require_tree .
+ *= require bootstrap.min
+ *= require theme
+ *= require bootstrap-reset
+ *= require font-awesome/font-awesome
+ *= require flexslider
+ *= require fancybox/jquery.fancybox
+ *= require style
+ *= require style-responsive
+ *= require bxslider/jquery.bxslider
+ *= require fancybox/jquery.fancybox
+ *= require revolution_slider/rs-style
+ *= require revolution_slider/settings
+ *= require voice
+ *= require nprogress
+ *= require nprogress-bootstrap
+*/

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="Mosaddek">
+		<meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+		<link rel="shortcut icon" href="img/favicon.png">
+		<title>Focus</title>
+  		<%= stylesheet_link_tag    "focus/all", media: "all", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+	<!--header start-->
+		<header class="header-frontend">
+		    <div class="navbar navbar-default navbar-static-top">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <a class="navbar-brand" href="index.html"><span class="logo"><%= image_tag "logo-focus.png", alt: "Focus Automa&ccedil;&atilde;o" %></span></a>
+		            </div>
+		            
+		            <div class="navbar-collapse collapse ">
+		                <ul class="nav navbar-nav">
+		                    <li <%= @page_active == 'index' ? "class=active" : "" %> > <%= link_to "Home", inicio_path %> </li>
+		                    <li <%= @page_active == 'about' ? "class=active" : "" %> ><%= link_to "A Focus", about_pages_path %></li>
+		                    <li <%= (@page_active == 'services' ? "class=active" : "") %> ><%= link_to "Serviços", services_pages_path %></li>
+		                  <!--   <li class="dropdown ">
+		                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Cases <b class=" icon-angle-down"></b></a>
+		                        <ul class="dropdown-menu">
+		                            <li><a href="typography.html">Automação Industrial</a></li>
+		                            <li><a href="button.html">Automação Predial</a></li>
+		                        </ul>
+		                    </li> -->
+		                    <li <%= @page_active == 'clients' ? "class=active" : "" %> ><%= link_to "Clientes", clients_pages_path %></li>
+		                    <li <%= @page_active == 'cases' ? "class=active" : "" %> ><%= link_to "Cases", cases_pages_path %></li>
+		                    <li <%= @page_active == 'downloads' ? "class=active" : "" %> ><%= link_to "Downloads", downloads_pages_path %></li>
+		                    <li <%= @page_active == 'contact' ? "class=active" : "" %> ><%= link_to "Contato", contact_pages_path %></li>
+		                    <li <%= @page_active == 'work' ? "class=active" : "" %> ><%= link_to "Trabalhe Conosco", work_pages_path %></li>
+		                    
+		                    <!-- <li><input type="text" placeholder=" Search" class="form-control search"></li> -->
+		                </ul>
+		            </div>
+		        </div>
+		    </div>
+		</header>
+	<!--header end-->
+		
+
+		<%= yield %>
+
+	<!--footer start-->
+		<footer class="footer">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-lg-3 col-sm-3">
+		                <h1>contact info</h1>
+		                <address>
+		                    <p>Endereço: R. Espanha 287 - Sala 8</p>
+		                    <p>Campinas, SP</p>
+
+		                    <p>Telefone : (19) 2317-2222</p>
+		                    <p>Email : <a href="javascript:;">contato@focusautomation.com.br</a></p>
+		                </address>
+		            </div>
+		            <div class="col-lg-5 col-sm-5">
+		                <h1>latest tweet</h1>
+		                <div class="tweet-box">
+		                    <i class="icon-twitter"></i>
+		                    <em>Please follow <a href="javascript:;">@nettus</a> for all future updates of us! <a href="javascript:;">twitter.com/vectorlab</a></em>
+		                </div>
+		            </div>
+		            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+		                <h1>stay connected</h1>
+		                <ul class="social-link-footer list-unstyled">
+		                    <li><a target="_blank" href="#"><i class="icon-facebook"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-google-plus"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-dribbble"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-linkedin"></i></a></li>
+		                    <li><a target="_blank" href="https://twitter.com/FocusAutomacao"><i class="icon-twitter"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-skype"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-github"></i></a></li>
+		                    <li><a target="_blank" href="#"><i class="icon-youtube"></i></a></li>
+		                </ul>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
+    <!--footer end-->
+		<%= javascript_include_tag "focus/all", "data-turbolinks-track" => true %>
+		<script>
+
+		      RevSlide.initRevolutionSlider();
+
+		      $(window).load(function() {
+		          $('[data-zlname = reverse-effect]').mateHover({
+		              position: 'y-reverse',
+		              overlayStyle: 'rolling',
+		              overlayBg: '#fff',
+		              overlayOpacity: 0.7,
+		              overlayEasing: 'easeOutCirc',
+		              rollingPosition: 'top',
+		              popupEasing: 'easeOutBack',
+		              popup2Easing: 'easeOutBack'
+		          });
+		      });
+
+		      $(window).load(function() {
+		          $('.flexslider').flexslider({
+		              animation: "slide",
+		              start: function(slider) {
+		                  $('body').removeClass('loading');
+		              }
+		          });
+		      });
+
+		      //    fancybox
+		      jQuery(".fancybox").fancybox();
+  		</script>
+		<% if @page_active == 'cases' %>
+			<%= javascript_include_tag "pages/cases", "data-turbolinks-track" => true %>
+		<% end %>
+		<% if @page_active == 'contact' %>
+			<%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry", "data-no-turbolinks" => true %>
+			<%= javascript_include_tag "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", "data-no-turbolinks" => true %>
+			<%= javascript_include_tag "pages/contact", "data-turbolinks-track" => true %>
+		<% end %>
+	</body>
+</html>
